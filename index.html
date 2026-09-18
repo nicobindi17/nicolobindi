@@ -156,14 +156,21 @@
   }
 
   @media (max-width: 900px) {
+    .top-grid {
+      display: block;
+      min-height: auto;
+    }
+
     .name {
-      grid-column: 1 / span 12;
       margin-bottom: 24px;
     }
 
-    .intro,
+    .intro {
+      margin-bottom: 40px;
+    }
+
     .theme-toggle {
-      grid-column: 1 / span 12;
+      margin: 0;
     }
   }
 
