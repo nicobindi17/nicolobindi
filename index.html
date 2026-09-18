@@ -17,9 +17,9 @@
     font-family: "ABC Areal";
     src: url("WOFF2/ABCAreal-RegularItalic.woff2") format("woff2");
     font-weight: 400;
-    font-style: italic;18
+    font-style: italic;
     font-display: swap;
-  }    
+  }
 
   @font-face {
     font-family: "ABC Areal";
@@ -72,7 +72,7 @@
   html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    min-height: 100%;
   }
 
   body {
@@ -83,23 +83,35 @@
     min-height: 100vh;
   }
 
-  .topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 24px;
-    padding: 40px 56px;
+  .top-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto 1fr auto;
+    column-gap: 24px;
+    min-height: 100vh;
+    padding: 32px 24px;
   }
 
-  .intro {
-    max-width: 447px;
+  .name {
+    grid-column: 1 / span 4;
+    grid-row: 1;
     font-size: 16px;
     line-height: 1.2;
   }
 
+  .intro {
+    grid-column: 5 / span 4;
+    grid-row: 1;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
   .intro p {
-    margin: 0;
+    margin: 0 0 16px;
+  }
+
+  .intro p:last-child {
+    margin-bottom: 0;
   }
 
   .hello {
@@ -107,10 +119,6 @@
   }
 
   .get-in-touch {
-    display: inline-block;
-    margin-top: 24px;
-    font-size: 16px;
-    line-height: 1.2;
     color: var(--text);
     text-decoration: underline;
     text-decoration-skip-ink: none;
@@ -118,10 +126,13 @@
   }
 
   .theme-toggle {
+    grid-column: 5 / span 4;
+    grid-row: 3;
+    align-self: end;
+    justify-self: start;
     display: flex;
     align-items: center;
     gap: 21px;
-    flex-shrink: 0;
   }
 
   .theme-toggle button {
@@ -144,29 +155,43 @@
     color: var(--text);
   }
 
-  @media (max-width: 640px) {
-    .topbar {
-      padding: 24px;
+  @media (max-width: 900px) {
+    .name {
+      grid-column: 1 / span 12;
+      margin-bottom: 24px;
     }
 
-    .intro {
-      font-size: 16px;
+    .intro,
+    .theme-toggle {
+      grid-column: 1 / span 12;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .top-grid {
+      padding: 24px;
     }
   }
 </style>
 </head>
 <body data-theme="dark">
-  <div class="topbar">
+  <div class="top-grid">
+    <div class="name">Nicolò Bindi</div>
+
     <div class="intro">
       <p>
         <span class="hello">Hello!</span><br>
-I'm a product designer with 10+ years shaping digital products, scaling design systems, and constantly getting inspired at frog, part of Capgemini Invent.<br>
-
-I'm a systems thinker who still cares about craft. My work bridges strategy, research and visual design, bringing data and AI into how large-scale consumer and enterprise products get built.<br>
-<br>
-Beyond work, I love running, from track to mountains, cycling, and simply staying outside with my family.<br>
-If you want to talk about new design opportunities, technology, or where to run next just <a href="mailto:nicolobindi.studio@gmail.com">Get in touch</a>.  </p>
-   
+        I’m a product designer with 10+ years shaping digital products and scaling design systems, currently making things at <a href="https://www.frog.co" target="_blank" rel="noopener" class="get-in-touch">frog</a>, part of Capgemini Invent.
+      </p>
+      <p>
+        I’m a systems thinker who still cares about craft. My work bridges strategy, research and visual design, bringing data and AI into how large-scale consumer and enterprise products get built.
+      </p>
+      <p>
+        Beyond work, I love running, from track to mountains, cycling or simply staying outside with my family.
+      </p>
+      <p>
+        If you want to talk about new design opportunities, technology, or where to run next, just <a href="mailto:nicolobindi.studio@gmail.com" class="get-in-touch">get in touch</a>.
+      </p>
     </div>
 
     <div class="theme-toggle">
