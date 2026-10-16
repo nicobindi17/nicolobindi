@@ -114,15 +114,20 @@
     margin-bottom: 0;
   }
 
-  .hello {
+  /* First paragraph (Hello! + intro) in full color, the rest dimmed */
+  .intro p + p {
     color: var(--text-dim);
   }
 
-  .get-in-touch {
-    color: var(--text);
+  .inline-link {
+    color: inherit;
     text-decoration: underline;
     text-decoration-skip-ink: none;
     text-underline-position: from-font;
+  }
+
+  .get-in-touch {
+    font-style: italic;
   }
 
   .theme-toggle {
@@ -187,17 +192,17 @@
 
     <div class="intro">
       <p>
-        <span class="hello">Hello!</span><br>
-        I’m a <b>product designer with 10+ years of experience</b> shaping digital products and scaling design systems, currently making things at <a href="https://www.frog.co" target="_blank" rel="noopener" class="get-in-touch">frog</a>, part of Capgemini Invent.
+        Hello!<br>
+        I’m a product designer with 10+ years of experience in shaping digital products and scaling design systems, currently making things at <a href="https://www.frog.co" target="_blank" rel="noopener" class="inline-link">frog</a>, part of Capgemini Invent.
       </p>
       <p>
-        I’m a systems thinker who still cares about craft. My work bridges <b>strategy, experience and visual design,</b> bringing data and AI into how large-scale consumer and enterprise products get built.
+        I’m a systems thinker who still cares about craft. My work bridges strategy, research and visual design, bringing data and AI into how large-scale consumer and enterprise products get built.
       </p>
       <p>
         Beyond work, I love running, from track to mountains, cycling or simply staying outside with my family.
       </p>
       <p>
-        If you want to talk about new design opportunities, technology, or where to run next, just <a href="mailto:nicolobindi.studio@gmail.com" class="get-in-touch">get in touch</a>.
+        If you want to talk about new design opportunities, technology, or where to run next, just <a href="mailto:nicolobindi.studio@gmail.com" class="inline-link get-in-touch">get in touch</a>.
       </p>
     </div>
 
